@@ -1,0 +1,34 @@
+.mybutonn {
+   background: #F6923B;
+   background-image: -webkit-linear-gradient(top, #F6923B, #D02D1B);
+   background-image: -moz-linear-gradient(top, #F6923B, #D02D1B);
+   background-image: -ms-linear-gradient(top, #F6923B, #D02D1B);
+   background-image: -o-linear-gradient(top, #F6923B, #D02D1B);
+   background-image: linear-gradient(to bottom, #F6923B, #D02D1B);
+   -webkit-border-radius: 27px;
+   -moz-border-radius: 27px;
+   border-radius: 27px;
+   color: #FFE0B8;
+   font-family: Arial;
+   font-size: 40px;
+   font-weight: 100;
+   padding: 40px;
+   box-shadow: 62px 1px 20px 0px #FFE6E6;
+   -webkit-box-shadow: 62px 1px 20px 0px #FFE6E6;
+   -moz-box-shadow: 62px 1px 20px 0px #FFE6E6;
+   text-shadow: 19px 8px 10px #FFFFFF;
+   border: solid #EDEDED 0px;
+   text-decoration: none;
+   display: inline-block;
+   
+}
+
+.mybutonn:hover {
+   background: #D04513;
+   background-image: -webkit-linear-gradient(top, #D04513, #F63939);
+   background-image: -moz-linear-gradient(top, #D04513, #F63939);
+   background-image: -ms-linear-gradient(top, #D04513, #F63939);
+   background-image: -o-linear-gradient(top, #D04513, #F63939);
+   background-image: linear-gradient(to bottom, #D04513, #F63939);
+   text-decoration: none;
+}

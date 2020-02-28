@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Data Table</title>
+    <script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="datatabel/media/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="datatabel/media/css/jquery.dataTables.min.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="veriferChamps_Pub.js"></script>
+</head>
+<body>
+    <table id="datatables" class=" table table-striped table-hover table-bordered">
+ <thead>
+ <tr class="bg-dark text-white text-center">
+ 
+ <th> Id </th>
+ <th> Nom </th>
+ <th> Position </th>
+ <th> image </th>
+  <th> Delete </th>
+ <th> Update </th>
+  </tr >
+</thead>
+<tbody>
+<?PHP
+include "C:/wamp64/www/crud/core/pubC.php";
+$pub1C=new pubC();
+$listePubs=$pub1C->afficherPub();
+?>
+
+<?PHP
+foreach($listePubs as $row){
+    ?>
+    <tr class="text-center">
+    <td><?PHP echo $row['id']; ?></td>
+    <td><?PHP echo $row['nom']; ?></td>
+    <td><?PHP echo $row['pos']; ?></td>
+    <td><?PHP echo $row['im']; ?></td>
+        <td><form method="POST" action="supprimer.php">
+            <button class="btn-danger btn" type="submit" name="supprimer" value="supprimer"><i class="fa fa-ban"></i> Delete </button>
+
+    <input type="hidden" value="<?PHP echo $row['id']; ?>" name="id">
+    </form>
+
+        <td><form action="modifierPub.php">
+            <button class="btn btn-success"" type="submit" name="supprimer" value="supprimer"><i class="fa fa-dot-circle-o"></i> Update </button>
+
+    <input type="hidden" value="<?PHP echo $row['id']; ?>" name="id">
+    </form>
+    </td>
+
+    </tr>
+    <?PHP
+}
+?>
+</tbody>
+</table>
+
+
+    <script type="text/javascript">
+        $(document).ready( function () {
+    $('#datatables').DataTable();
+} );
+    </script>
+</body>
+</html>
